@@ -21,6 +21,7 @@ public class ClosestPair {
 
         // TODO - Runtime of Java 'SubList' - look it up!
         // TODO - The construction of Qx, Qy, Rx and Ry should run in O(n) time!
+        // TODO - It seems that Sublist runs in O(1) for ArrayList's -> WIN.
 
         // Contruct Qx, Qy, Rx, Ry
         List<List<Point>> QR = constructQR(px, py);
@@ -38,6 +39,8 @@ public class ClosestPair {
 
         // TODO - does the construction of Py run in O(n) time?
         // TODO - it uses the sort at the end!??
+        // TODO - Collection.sort runs in O(n log n)?
+        // TODO - The construction of s (before the y sort) is O(n) ( + the if -> constant?).
 
         // getting values in P within distance delta of L (the vertical line contructed by 'xstar')
         for (Point p : px) {
@@ -57,6 +60,8 @@ public class ClosestPair {
         Double lowest = null;
 
         // TODO - this is O(n) time? Doubt it.
+        // TODO - this might be O(nm)
+        // TODO - for each point (n), do m calculations?
 
         for (Point p : s) {
             for (int i=index+1; i<index+15; i++) {
