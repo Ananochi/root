@@ -44,7 +44,7 @@ public class ClosestPair {
 
             if (p.getX().getVal() <= xstar.getVal() && p.getX().getVal() <= xstar.getVal()+delta) {
 
-                // the point lies within
+                // the point lies within 'the strip'
                 s.add(p);
             }
         }
@@ -56,7 +56,7 @@ public class ClosestPair {
         int index = 0;
         Double lowest = null;
 
-        // TODO - this is O(n) time? Doubt it :(
+        // TODO - this is O(n) time? Doubt it.
 
         for (Point p : s) {
             for (int i=index+1; i<index+15; i++) {
