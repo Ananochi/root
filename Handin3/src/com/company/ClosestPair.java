@@ -14,10 +14,13 @@ public class ClosestPair {
 
         // if |P| <= 3
         // Chosing whether to look at either px or py,
-        // shouldent make a difference!
+        // shouldent make a difference, since points are the same.
         if (px.size() <= 3) {
             return brutePairs(px);
         }
+
+        // TODO - Runtime of Java 'SubList' - look it up!
+        // TODO - The construction of Qx, Qy, Rx and Ry should run in O(n) time!
 
         // Contruct Qx, Qy, Rx, Ry
         List<List<Point>> QR = constructQR(px, py);
@@ -32,6 +35,9 @@ public class ClosestPair {
         Double delta = Math.min(q0q1, r0r1);
         Coordinate xstar = px.get(px.size()-1).getX();
         List<Point> s = new ArrayList<>();
+
+        // TODO - does the construction of Py run in O(n) time?
+        // TODO - it uses the sort at the end!??
 
         // getting values in P within distance delta of L (the vertical line contructed by 'xstar')
         for (Point p : px) {
@@ -49,6 +55,8 @@ public class ClosestPair {
         // for each point s in Sy, compute distance from s to each of next 15 points in Sy
         int index = 0;
         Double lowest = null;
+
+        // TODO - this is O(n) time? Doubt it :(
 
         for (Point p : s) {
             for (int i=index+1; i<index+15; i++) {
