@@ -62,6 +62,7 @@ public class ClosestPair {
         // TODO - this is O(n) time? Doubt it.
         // TODO - this might be O(nm)
         // TODO - for each point (n), do m calculations?
+        // TODO - ArrayList.get runs in O(1)
 
         for (Point p : s) {
             for (int i=index+1; i<index+15; i++) {
@@ -75,10 +76,8 @@ public class ClosestPair {
             }
             index++;
         }
-
         if (lowest<delta) {return lowest;}
         return delta;
-
     }
 
     // Constructs Q and R from Px and Py
