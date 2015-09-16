@@ -1,6 +1,6 @@
 Notes for complexity of implementation of "Closest Pair of Points" algorithm:
 
-The pseudo-code states the following (p. 136):
+The pseudo-code states the following (p. 136 of Kleinberg and Tardos, \emph{Algorithm Design}, Addison--Wesley 2008.):
 
 a) 
 Construct Px and Py in O(n log n) time
