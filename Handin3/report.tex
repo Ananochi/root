@@ -57,16 +57,16 @@ we get the run-time of O(n).
 \bigskip
 \emph{c) Construct Sy in O(n) time} \linebreak
 The current implementation runs through Px (which is of size n), and checks whether each Point lies within 'delta' of L. During this it 
-creates a list, and lastly this list gets sorted by y-coordinate. The running time of this operation should be O(n + n log n). 
+creates a list. The running time of this operation is O(n). 
 This is above the mentioned O(n) time. 
 
 \bigskip
 \emph{d) For each point in Sy compute distance from 'delta'} \linebreak
 In order to do this, our implementation goes through each element in Sy (which worst-case is of size n), 
 and then checks for the 15 (if they exists) next points in Sy, whether these constitute a smaller pair with the current element. 
-The complexity is therefore O(n + k), since we assume the for loop over 15 elements to be a constant, which is the same as O(n).
+The complexity is therefore O(15n), since we assume the for loop over 15 elements to be a constant, which is the same as O(n).
 
 \bigskip
-Total runtime is therefore: O(n log n + n + n + n log n + n) => O(2(n log n)) (???)
+Total runtime is therefore, as in the book: O(n log n) + the initial sorting which takes O(n log n).
 
 \end{document}

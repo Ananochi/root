@@ -1,0 +1,3 @@
+Sphinx--Bandersnatch: 5
+Sphinx--Snark: -8
+Bandersnatch--Snark: -18
