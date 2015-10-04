@@ -1,0 +1,8 @@
+Simplified SOA patterns:
+
+http://simplicable.com/new/10-soa-design-patterns-every-architect-should-know
+
+The standard WIKI:
+
+https://en.wikipedia.org/wiki/Service-oriented_architecture
+
