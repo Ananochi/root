@@ -1,0 +1,10 @@
+SA TODO
+
+Beskriv IoT Reference Arkitekturen generel (fortsæt hvor Henrik slap ...)
+
+Beskriv hvordan vi benytter IoT Arkitekturen (MED KONKRETE EKSEMPLER!) ala. hvad vi snakkede om "sidst"
+
+Vis med konkrete tegninger/diagrammer hvordan "data"/"information" flyder igennem vores arkitektur udgangspunkt i eksemplerne
+
+MØDES TORSDAG D. 8/10 kl. 17:00 ved Statens Serum Intitut (!)
+
