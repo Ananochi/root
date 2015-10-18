@@ -1,29 +1,8 @@
 -----------------------------------------------------------------------------------------
-*************************************** SA TODO *****************************************
+************************************** SA NOTES *****************************************
 -----------------------------------------------------------------------------------------
 
- 1.0 
- 
-Med udgangspunkt i IoT Reference arkitekturen (e.g. "figuren"), forsøg at beskriv 
-hvad vi kom til enighed om til sidste møde.
-   
- 2.0 
+Præsenter diagram (Architecture.png)
+Kan mødet torsdag måske rykkes til kl. 16:00? Skal spille kamp torsdag: mødes 18:50, spille 19:35.
 
-Gennemlæs det nuværende afsnit om IoT reference arkitekturen, og overvej hvorvidt
-der skal tilføjes "noget".
-   
- 3.0 
-
-Lav konkrete tegninger/digrammer over hvordan data/information flyder gennem
-vores IoT arkitektur (1.0) (med udgangspunkt i eksempler fra litteraturen)
-
------------------------------------------------------------------------------------------
-************************************** SA Møder *****************************************
------------------------------------------------------------------------------------------
-
- - Torsdag d. 8/10 kl. 17:00-20:00 @ Statens Serum Intitut (!)
- 
- - [insert]
- 
- - [insert]
 
