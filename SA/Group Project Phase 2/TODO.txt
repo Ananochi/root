@@ -4,7 +4,6 @@ Skriv én sides reflektion:
 
 "Each  group  member  is expected to write at least one page of reflective summary of his/her learning and experiences  about  the  utility  of  different  concepts  and  techniques  his/her  team would  have  used  for  understanding  the  application  domain  and designing  and improving  the  architecture ..."
 
-
 Læs artikel: 
 
 REST.pdf
