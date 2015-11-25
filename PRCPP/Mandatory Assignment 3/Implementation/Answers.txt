@@ -1,0 +1,158 @@
+<----------------------------------------------->
+Exercise 6.1
+<----------------------------------------------->
+------
+6.1.1
+------
+See the implementation for the code.
+
+------
+6.1.2
+------
+See the implementation for the code. 
+It is important because other threads can be using this particiular stripe, trying to alter value, different one trying to read - so we may loose values. 
+
+------
+6.1.3
+------
+See the implementation for the code.
+
+------
+6.1.4
+------
+See the implementation for the code.
+
+------
+6.1.5
+------
+See the implementation for the code.
+Second one. Because it scales better. Locking on buckets it is a misunderstanding of
+the striping concept. If we lock all buckets (through locking every stripe) we are loosing scalability. 
+
+------
+6.1.6
+------
+Test are passing.
+
+------
+6.1.7
+------
+# OS:   Linux; 3.19.0-28-generic; amd64
+# JVM:  Oracle Corporation; 1.8.0_60
+# CPU:  null; 8 "cores"
+# Date: 2015-10-08T12:18:25+0200
+SynchronizedMap       16         423655.9 us   22075.31          2
+99992.0
+StripedMap            16         145269.9 us   25042.68          2
+99992.0
+
+As expected partial locking is better than locking entire structure - the boost significant. It proves
+that striping is great way for improving scalability instantly - thanks to minor changes our code is more than 2 time faster.
+But according to long run - striping has limits but it is still useful technique. 
+
+------
+6.1.8
+Because it is ovearhead. Creating stripe for each entry is just a proxy for each entry. The role of stripes is to probide batch,
+that we can process. Duration of processing is more efficient than memory wasted for creating reference for each entry.
+Also this values (16,32) are similiar for number of processor cores - it can be related to simple threading formula for starting amount of threads - 2 * amountOfCores + .
+
+------
+6.1.9
+------
+We are avoiding iterating over large structure. The indexes are smaller thanks to division. 
+
+------
+6.1.10
+------
+Due to reallocateBuckets. "h % lockCount is invariant under doubling the number of buckets Otherwise there is a risk of
+locking a stripe, only to have the relevant entry moved to a
+different stripe by an intervening call to reallocateBuckets."
+We are avoiding unnecesary locking - that is the best thing we can achieve in concurrency.
+<----------------------------------------------->
+Exercise 6.2
+<----------------------------------------------->
+
+------
+6.2.1
+------
+See the implementation for the code.
+
+------
+6.2.2
+------
+See the implementation for the code. The reason for the stripe size not being altered,
+is that nothing is being added.
+
+------
+6.2.3
+------
+See the implementation for the code.
+
+------
+6.2.4
+------
+See the implementation for the code.
+
+------
+6.2.5
+------
+# OS:   Linux; 3.19.0-28-generic; amd64
+# JVM:  Oracle Corporation; 1.8.0_60
+# CPU:  null; 8 "cores"
+# Date: 2015-10-08T17:14:24+0200
+SynchronizedMap       16         483740.9 us   76234.51          2
+99992.0
+StripedMap            16         155410.8 us   25014.48          2
+99992.0
+StripedWriteMap       16          71390.2 us    3576.92          4
+99992.0
+WrapConcHashMap       16          78808.8 us    2267.91          4
+99992.0
+
+First three results are working as expected - each implementation is reducing amount of locking so it performs better. Suprisingly the fourth one - wrapper around Java concurrent hash map works... slowe than our striped one.
+But in long run it scales better - according to lecture slide. 
+
+<----------------------------------------------->
+Exercise 6.3
+<----------------------------------------------->
+
+------
+6.3.1
+------
+The output from running the file:
+
+# OS:   Windows 7; 6.1; amd64
+# JVM:  Oracle Corporation; 1.8.0_60
+# CPU:  Intel64 Family 6 Model 58 Stepping 9, GenuineIntel; 4 "cores"
+# Date: 2015-10-07T15:57:24+0200
+
+current thread hashCode               0,0 us       0,00   67108864
+ThreadLocalRandom                     0,0 us       0,00   33554432
+AtomicLong                       924718,5 us   94143,40          2
+LongAdder                        198449,4 us    7731,41          2
+LongCounter                      587284,9 us  451277,99          2
+NewLongAdder                     473080,6 us   57818,06          2
+NewLongAdderPadded               238674,9 us   14757,94          2
+
+Results are fine but a bit shocking. I expected smaller differences between AtomicLong and other ones.
+LongAdder seems to be very fine piece of code. And of course the Padded Long Adder is very fast.
+But the results from 6.3.2 shows that my PC resources LongAdder and Padded Long Adder are better consumed - in return they offers better scalability and performance in this probe.
+
+------
+6.3.2
+------
+# OS:   Linux; 3.19.0-28-generic; amd64
+# JVM:  Oracle Corporation; 1.8.0_60
+# CPU:  null; 8 "cores"
+# Date: 2015-10-08T18:34:37+0200
+current thread hashCode               0.0 us       0.00  134217728
+ThreadLocalRandom                     0.0 us       0.00   67108864
+AtomicLong                       863551.0 us    7374.53          2
+LongAdder                         75778.6 us    7408.67          4
+LongCounter                      671836.7 us  324975.01          2
+NewLongAdder                     453784.3 us   44098.58          2
+NewLongAdderPadded               105815.8 us    7567.41          4
+NewLongAdderLessPadded           182398.4 us   22886.35          2
+@#$!!@#??
+Java 1.8 Linux Kubuntu 64 bit. But still I have to take what lecturer says in comment as a dogmat.
+I can't explain but it works better.... I thought it is some old trick but I am using 1.8 and it still works..
