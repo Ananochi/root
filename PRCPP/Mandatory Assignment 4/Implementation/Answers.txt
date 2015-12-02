@@ -13,8 +13,23 @@ Exercise 8.1.1
 Answer:
 
 Our implementation passes the initial simple test. 
-The deficiencies in the inital test is .... We have extended the test to include these, by
-doing ... Our implementation does still pass the sequential test.
+
+The deficiencies in the initial test is lack of coverage for the 'StripedWriteMap' tests, 
+according to IntelliJ's coverage analyzer (its at 85%):
+
+The following is a list of functionality which we are not testing:
+
+- The relationship between bucket count and lock count (in the constructer)
+- In the 'put' method, when the map is to big, one have to reallocate buckets in order to do so.
+  This case is not being tested.
+- The above case also inflicts the 'putIfAbsent' and 'remove' functions.  
+- The test is not covering the real reallocateBuckets() method (!) But simply the 'empty one'.
+
+In order to "fix" the above, we simply made the reallocateBuckets() call the overloaded reallocateBuckets(),
+and by doing so, we achieved 100% coverage in the tests. Furthermore we added testing to the constructers of the
+different maps.
+
+After this fix, we still pass the sequential functionality test.
 
 ---------------------------------------
 Exercise 8.1.2

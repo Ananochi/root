@@ -77,13 +77,14 @@ class TestStripedMap {
     }
 
     private static void concurrentTestMap(final OurMap<Integer, String> map) {
-
+        //System.out.printf("%n%s%n", map.size());
         assert map.size() != 0;
+
         if (map.containsKey(14) == true) {
             assert map.containsKey(14);
-        } else map.put(14, "MapEntry14");
-        assert map.containsKey(14);
+        }
 
+        //map.forEach((k, v) -> System.out.printf("%10d maps to %s%n", k, v));
     }
 
     private static void timeAllMaps() {
