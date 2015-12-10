@@ -1,0 +1,22 @@
+Hi Radoslaw and Rasmus I have looked at your re-submission, but apart from that you fixed Histogram3::increment() and that you implemented Histogram2::getBins(), I cannot really see that you have improved your submission much. 
+
+I really would like to give you a full pass on this assignment, so I wanted to check with you if you have any specific issues with the hand-in and to give you some more detailed feedback. 
+
+Your answer to exercise 2.1.4 is: "In this particular case yes. Because our threads are just "pilling" the output of threads computations. So volatile provides necessary visibility but nothing more, we still need to provide atomicity to it if we want use it outside this case." 
+
+TODO ----
+But this is not true. If you implement MyAtomicInteger using a volatile integer and do not perform synchronisation during addAndGet, then addAndGet will always cause lost updates. This is because addAndGet is a typical check-then-act sequence, where you first read (check) a value, then you add another number to it and write it back to memory (act). You need to make these atomic under all circumstances. 
+
+For exercise 2.2, you wrote: 
+"1. Avoid CPU caching
+2. Visibility" reasons Which is much too short. 
+
+TODO ----
+Why would you want to avoid CPU caching? And what have immutable member variables to do with visibility reasons? You should at least write an entire sentence, such as: “The cache field must be declared volatile to guarantee the visibility of updates of the field across all threads."
+
+TODO ----
+In exercise 2.3, your implementation of Histogram2::getBins() is wrong. First, you copy all data twice by first using clone and then copying the data explicitly. That is not wrong in terms of thread safety, but really not necessary. 
+Secondly, you do not perform any synchronisation, so there are no visibility guarantees and the returned array might always be an array of zeroes. 
+Lastly, I cannot verify that your timing results from TestCache.java are correct. In general, I cannot assess what you have done if you do not supply any source code. This is especially unlucky, because I asked you in your last feedback to provide the code you used for testing. If you get the exact same results from every run, it might be the case that you have forgotten to recompile after each code change. If you submit the code, we can maybe figure out what went wrong here. 
+
+Please fix these issues and re-submit this exercise. If anything is unclear or if you have any problems or questions, please come and ask me, either during the exercise sessions or just send me an e-mail. In urgent cases, you can also come by my office, 4D06.

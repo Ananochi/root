@@ -1,0 +1,37 @@
+# OS:   Linux; 3.19.0-28-generic; amd64
+# JVM:  Oracle Corporation; 1.8.0_60
+# CPU:  Intel(R) Core(TM) i7-4720HQ CPU @ 2.60GHz; 8 "cores"
+# Date: 2015-09-20T14:53:17+0200
+countSequential                   10353.9 us      66.59         32
+countParallelLocal      1         10586.7 us      67.15         32
+countParallelLocal      2          6822.0 us      33.27         64
+countParallelLocal      3          4226.9 us     403.97         64
+countParallelLocal      4          2996.0 us      43.55        128
+countParallelLocal      5          4144.0 us      62.64         64
+countParallelLocal      6          3866.0 us      76.09        128
+countParallelLocal      7          3836.5 us      61.31        128
+countParallelLocal      8          3710.1 us      38.36        128
+countParallelLocal      9          3887.0 us      69.07        128
+countParallelLocal     10          3852.4 us      66.74        128
+countParallelLocal     11          3736.3 us      55.11        128
+countParallelLocal     12          3677.7 us      66.11        128
+countParallelLocal     13          3603.2 us      36.47        128
+countParallelLocal     14          3497.0 us      53.29        128
+countParallelLocal     15          3498.2 us      57.36        128
+countParallelLocal     16          3562.6 us     115.89        128
+countParallelLocal     17          3552.4 us      97.96        128
+countParallelLocal     18          3739.6 us      83.60         64
+countParallelLocal     19          3696.5 us      99.31        128
+countParallelLocal     20          3663.6 us     100.15        128
+countParallelLocal     21          3622.6 us     111.78        128
+countParallelLocal     22          4581.3 us    1338.63         64
+countParallelLocal     23          3569.9 us      35.68        128
+countParallelLocal     24          3626.9 us      62.43        128
+countParallelLocal     25          3779.6 us      82.44        128
+countParallelLocal     26          3832.8 us     108.39        128
+countParallelLocal     27          3760.4 us     117.55        128
+countParallelLocal     28          3851.7 us      45.25         64
+countParallelLocal     29          3830.9 us     103.86        128
+countParallelLocal     30          3781.6 us     167.46         64
+countParallelLocal     31          6432.6 us    1029.75         64
+countParallelLocal     32          3712.0 us      70.85        128

@@ -1,0 +1,12 @@
+# OS:   Linux; 3.19.0-28-generic; amd64
+# JVM:  Oracle Corporation; 1.8.0_60
+# CPU:  Intel(R) Core(TM) i7-4720HQ CPU @ 2.60GHz; 8 "cores"
+# Date: 2015-09-19T21:11:41+0200
+hashCode()                            2.5 ns       0.02  134217728
+Point creation                       48.4 ns       1.30    8388608
+Thread's work                      5715.1 ns      68.75      65536
+Thread create                       814.6 ns      50.11     524288
+Thread create start               24073.9 ns    2927.46      16384
+Thread create start join          50879.6 ns     896.87       8192
+ai value = 1802180000
+Uncontended lock                      5.4 ns       0.34   67108864

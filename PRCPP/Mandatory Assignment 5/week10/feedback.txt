@@ -1,0 +1,5 @@
+Your answers are all missing.
+
+ *** 10.2.5 Your transferBins is the wrong way around. You should add all bins from hist to this. 
+ 
+ *** 10.3.3 Your put, remove and putIfAbsent implementations all contain a non-atomic check-then-act sequence. Can you spot it? Do you see why this is a problem?

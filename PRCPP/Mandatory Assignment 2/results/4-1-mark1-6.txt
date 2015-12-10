@@ -1,0 +1,66 @@
+# OS:   Linux; 3.19.0-28-generic; amd64
+# JVM:  Oracle Corporation; 1.8.0_60
+# CPU:  Intel(R) Core(TM) i7-4720HQ CPU @ 2.60GHz;; 8 "cores"
+# Date: 2015-09-19T20:41:24+0200
+Mark0 4079.0 ns
+Mark1    0.0 ns
+Mark2   29.3 ns
+Mark3   29.2 ns
+Mark3   29.1 ns
+Mark3   29.2 ns
+Mark3   29.2 ns
+Mark3   29.2 ns
+Mark3   28.8 ns
+Mark3   28.9 ns
+Mark3   29.0 ns
+Mark3   28.7 ns
+Mark3   29.0 ns
+Mark4   28.9 ns +/-  0.139
+Mark5  133.0 ns +/-    98.17          2
+Mark5   81.2 ns +/-    57.49          4
+Mark5   54.0 ns +/-    14.63          8
+Mark5   43.3 ns +/-     7.46         16
+Mark5   38.2 ns +/-     3.13         32
+Mark5 5312.8 ns +/- 16673.06         64
+Mark5   35.8 ns +/-     4.56        128
+Mark5   34.4 ns +/-     1.21        256
+Mark5   34.0 ns +/-     0.82        512
+Mark5   33.7 ns +/-     0.36       1024
+Mark5   33.6 ns +/-     0.21       2048
+Mark5   33.6 ns +/-     0.34       4096
+Mark5   31.5 ns +/-     1.89       8192
+Mark5   31.0 ns +/-     0.92      16384
+Mark5   31.5 ns +/-     1.24      32768
+Mark5   30.4 ns +/-     1.71      65536
+Mark5   29.6 ns +/-     1.33     131072
+Mark5   28.9 ns +/-     0.51     262144
+Mark5   29.0 ns +/-     0.52     524288
+Mark5   29.7 ns +/-     0.85    1048576
+Mark5   29.0 ns +/-     0.45    2097152
+Mark5   28.9 ns +/-     0.46    4194304
+Mark5   28.9 ns +/-     0.16    8388608
+Mark5   29.0 ns +/-     0.26   16777216
+Mark6 multiply                            468.5 ns    1102.76          2
+Mark6 multiply                            156.6 ns      91.63          4
+Mark6 multiply                            155.4 ns     116.75          8
+Mark6 multiply                            132.7 ns     116.80         16
+Mark6 multiply                             63.3 ns      61.98         32
+Mark6 multiply                             57.0 ns      32.92         64
+Mark6 multiply                             48.1 ns      10.90        128
+Mark6 multiply                             44.7 ns       5.62        256
+Mark6 multiply                             44.0 ns       6.43        512
+Mark6 multiply                             40.1 ns       1.91       1024
+Mark6 multiply                             39.9 ns       1.11       2048
+Mark6 multiply                             39.6 ns       0.42       4096
+Mark6 multiply                             32.1 ns       1.90       8192
+Mark6 multiply                             31.4 ns       0.12      16384
+Mark6 multiply                             30.2 ns       0.75      32768
+Mark6 multiply                             31.2 ns       2.24      65536
+Mark6 multiply                             29.3 ns       0.80     131072
+Mark6 multiply                             28.7 ns       0.51     262144
+Mark6 multiply                             29.2 ns       0.47     524288
+Mark6 multiply                             28.8 ns       0.43    1048576
+Mark6 multiply                             28.9 ns       0.37    2097152
+Mark6 multiply                             29.2 ns       0.36    4194304
+Mark6 multiply                             28.9 ns       0.18    8388608
+Mark6 multiply                             28.9 ns       0.13   16777216

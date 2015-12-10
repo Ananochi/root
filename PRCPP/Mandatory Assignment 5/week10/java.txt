@@ -1,0 +1,42 @@
+-----------------------------------------------
+-----------------------------------------------
+RESUBMISSON OF MANDATORY ASSIGNMENT 5
+
+By Radek Niemczyk & Rasmus Løbner Christensen
+-----------------------------------------------
+-----------------------------------------------
+
+----------------------
+10.2
+----------------------
+
+1. We have implemented "increment", "getCount" and "getSpan" in the file "TestStmHistogram.java"
+
+2. Running the "TestStmHistogram.java" produces the expected (and correct) output.
+
+3. We have implemented the method "GetBins" to correctly hold the values of the counts in the bins of the histogram.
+   "GetBins" returns an int[].
+   
+4. We have implemented the method "getAndClear(bin)" to correctly return the counts in the bin of the histogram,
+   and also reset that count to zero.
+
+5. We have implemented "transferBins(hist)" so that it transfers the counts from "hist" to "this" histogram. Also it resets
+   the counts of "hist" to zero by using the "GetAndClear" method.
+
+6. Yes, this is the case.
+
+7. Our implementation would save the count value from "total", reset the count in "total" to zero,
+   and then update "total" with the same value as before. All this would result in the histogram holding the same count values. 
+   As far as our understanding goes, this is what to be expected as the correct functionality.
+
+----------------------
+10.3
+----------------------
+
+1-4. We implemented the required methods. In the feedback (from our original submission), we were told that
+     our Put, Remove and PutIfAbsent methods were check-then-act sequences, which we tried to solve, by not having the
+	 initial "containsKey" checks outside of the atomic declaration. 
+ 
+5.   We believe that the "BoundedQueue" implementation shows how to make use of such an approach. In the given implementation,
+     the check whether "availableSpaces.get() == 0" is being performed (and the use of "retry()"),
+	 which shows how we could implement the mentioned convention with e.g. a "newBuckets" field being set to non-null while exactly while a thread is reallocating buckets.

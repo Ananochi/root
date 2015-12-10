@@ -1,0 +1,28 @@
+4.1
+1. 4-1-mark1-6.txt
+   No surprises but only Mark5 seems to have two weird calculations. And the first is poor as expected.
+2. 4-1-mark7-math-linux.txt
+   No surprises - Mark7 is rocksolid.
+4.2
+1. Results-TestCountPrimesThreads.txt
+2. plot.png
+3. The fact is - even for redundat amount of threads performance is better than  
+squential version. After 20 threads the time starts to be "unstable".  
+4.3 Results-AtomicLong-TestCountPrimesThreads.txt
+For my best case - the 4 threads scenario the difference is 
+in favor of LongCounter - 4 nano seconds. (3000 vs 2996) 
+And the average for AtomicClass is 28.17475 ns worse.
+I strongly believe in general we should use bult in concurrent 
+data structures. Our code is clearlier, shorter and we don't 
+have to worry about corectness and corner cases.
+5. Results-AtomicLongWithLocalThreadCounter-TestCountPrimesThreads.txt 
+It is even slower - for 4 cors case it is 45 ns more. But it can be affected by some OS background work.
+One things is sure - it is not faster. 
+4.4
+1-6. Memoizers.txt
+7. My results again are funny because the most raw memoizer performs the best.
+   So it is not correct. I thought the Memoizer - final Goetz version should be the best - or the 5th
+   because of Java 8 API.
+8. Based on latests Algorithm classes I would love to test some recursion calls. Simplest case is Fibonacci with memorization. 
+   Processing recursion tree with memorization is so much faster. So it would be good test for caching. 
+ 

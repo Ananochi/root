@@ -1,0 +1,56 @@
+Exercise 2.1
+1. Write a sequential program to compute the total number of prime factors of the integers in range 0 to
+4,999,999. The result should be 18,703,729. How much time does this take?
+PT5.937S
+
+2. For use in the next subquestion you will need a MyAtomicInteger class that represents a thread-safe integer.
+It must have a method int addAndGet(int amount) that atomically adds amount to the integer
+and returns its new value, and a int get() method that returns the current value.
+Write such a MyAtomicInteger class.
+
+3.
+Result are still correct.
+PT6.288S
+
+4.
+In this particular case yes. Because our threads are just "pilling" the output of threads computations.
+So volatile provides necessary visibility but nothing more, we still need to provide atomicity to it if we want use 
+it outside this case.
+
+5.
+I did not notice any difference but theoriticaly it can occur. Java AtomicInteger implementation handles locking smarter than 
+manualy synchrinizing. Yes, can be because it is helping JIT with caching so might be a boost. 
+
+Exercise 2.2
+
+1. Avoid CPU caching
+2. Visibility reasons
+
+Exercise 2.3
+
+1. span gets the final because it should be immutable by design. Also private because OOB.
+    count is also private field. Which only can be accessed via methods which are synchronized in order to prevent conflits. source file attached 
+2. source file attached 
+3. Still works fine. We can remove synchronization from get because multiple reads are good for scalability. But we still need to control the manipulation over objects - and lock over our class that's why
+the Increment should remain synchronized. source file attached 
+4. Still works. source file attached 
+5. Histogram2 - clones counts array to prevent messing with original one.
+    Histogram3 - also gets clone of original one. And it is not altered by operations in between because the AtomicInteger objects are shallow copies.
+    Histogra4 - here it is possible to have "live changes" for objects which will be copied.
+6. source code added.
+
+Exercise 2.4
+
+1. Source file added.
+2. number of calls is the same.
+3. For the M1 it takes same amount of time. 14s
+    The m1 is locking on entire object, the m2 not thanks to ConcurrentHashMap.
+4. It the same amount of calls and the time.
+5. - || -
+6. - || -
+7. I have problem with this task because all implementation have same time - I have brand new i7 so maybe it is just too fast.
+8. Added source file. 
+    1407632075.9 ns 10544510.24
+    Number of calls is very good and performance also. This shows how good the implementation of java util is. 
+
+
