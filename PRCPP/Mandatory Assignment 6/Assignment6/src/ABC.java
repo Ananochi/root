@@ -1,5 +1,22 @@
 import java.util.Random; import java.io.*; import akka.actor.*;
 
+// -- BASIC PROCESSING ------------------------------------------
+class basicProcessing {
+
+    public static String n2s(int input) {
+
+        return Integer.toString(input);
+    }
+
+    public static int randomNum(int input) {
+
+        Random rand = new Random();
+        int randomNum = rand.nextInt((input - 1) + 1) + 1;
+
+        return randomNum;
+    }
+}
+
 // -- MESSAGES --------------------------------------------------
 class StartTransferMessage implements Serializable { /* TODO */
 

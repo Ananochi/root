@@ -1,6 +1,9 @@
 -module(helloworld).
 -export([start/0,account/1,bank/0,clerk/0]).
 
+%% Tager en liste af tal og laver disse til strenge
+%% E.g.: INPUT:  1> lists:flatten(io_lib:format("~p", [35365])).
+%%       OUTPUT: "35365"
 n2s(N) -> lists:flatten(io_lib:format("~p", [N])). %% HACK!
 
 account(Balance) ->
@@ -19,6 +22,7 @@ bank() ->
          bank()
    end.
 
+   %% Creates random number between 1 and N - divided by 10.
 random(N) -> random:uniform(N) div 10.
 
 ntransfers(0,_,_,_) -> true;
