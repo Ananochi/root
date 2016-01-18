@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="ScreenViewClient">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../ScreenViewClient.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../ScreenViewServer.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../ScreenViewClient.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../ScreenViewServer.jar!/" />
+    </SOURCES>
+  </library>
+</component>
