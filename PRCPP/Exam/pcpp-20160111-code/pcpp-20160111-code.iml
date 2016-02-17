@@ -7,7 +7,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
     <orderEntry type="library" name="multiverse-core-0.7.0" level="project" />
     <orderEntry type="library" name="akka-actor" level="project" />
+=======
+    <orderEntry type="library" name="ScreenViewClient" level="project" />
+>>>>>>> origin/master
   </component>
 </module>
